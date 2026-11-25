@@ -1,17 +1,17 @@
 from random import randint
 
-computador = randint(0, 10) # faz o computador gerar um número inteiro entre 0 à 10 aleatório
-resposta = 50
-contjogada = 1
+computador = randint(0, 10)
+resposta = -1
+contjogada = 0
 
-print('Tente adivinhar o número que estou pensando!')
+print('Pensei em um número entre 0 e 10. Tente adivinhar!')
 
 while resposta != computador:
-  resposta = int(input('Digite o número: '))
+  resposta = int(input('Digite seu palpite: '))
+  contjogada += 1
 
   if resposta != computador:
     print('Não foi dessa vez, tente novamente!')
-    contjogada += 1
 
 print('Parabéns!! Você adivinhou o número que eu estava pensando!')
-print(f'Você acertou em {contjogada} jogadas')
+print(f'Você precisou de {contjogada} palpite(s) para vencer.')

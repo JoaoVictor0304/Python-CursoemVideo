@@ -1,10 +1,22 @@
 
-n = int(input('Digite o número que deseja saber o fatorial: '))
+n = int(input('Digite um número inteiro não negativo: '))
+
+while n < 0:
+  n = int(input('Valor inválido. Digite um número inteiro não negativo: '))
 
 resultado = 1
+contador = n
 
-while n > 0:
-  resultado = resultado * n
-  n -= 1
+print(f'{n}!=', end='')
 
-print(f'O fatorial é {resultado}')
+while contador > 0:
+  resultado *= contador
+  print(contador, end='')
+  if contador > 1:
+    print('x', end='')
+  contador -= 1
+
+if n == 0:
+  print(resultado)
+else:
+  print(f'={resultado}')

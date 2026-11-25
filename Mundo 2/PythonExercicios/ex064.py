@@ -1,13 +1,12 @@
 
-cont = 1
+cont = 0
 soma = 0
+num = int(input('Digite um número inteiro (999 para sair): '))
 
-while 0 < cont:
-  num = int(input('Digite um número (999 - sair): '))
+while num != 999:
   soma += num
   cont += 1
+  num = int(input('Digite um número inteiro (999 para sair): '))
 
-  if num == 999:
-    total = soma - 999
-    print(f'A soma de todos números é: {total}')
-    cont = 0
+print(f'Você digitou {cont} números.')
+print(f'A soma entre eles foi {soma}.')

@@ -2,22 +2,23 @@
 p = int(input('Digite o primeiro termo: '))
 r = int(input('Digite a razão: '))
 
-i = 0
-valor = 0
-cont = 10
+termo = p
+total = 0
+mais = 10
 
-while i < cont:
+print('Os 10 primeiros termos da PA são:')
 
-  if i == 0:
-    print(p)
-    i += 1
-    valor = p
-  else:
-    valor += r
-    i += 1
-    print(valor)
+while mais != 0:
+  contador = 0
 
-  if i == cont:
-    resp = int(input('Deseja saber mais alguns termos? (0 - sair): '))
-    if resp != 0:
-      cont += resp
+  while contador < mais:
+    print(termo, end=' -> ' if contador < mais - 1 else '\n')
+    termo += r
+    contador += 1
+    total += 1
+
+  mais = int(input('Quantos termos a mais você quer mostrar? (0 para sair): '))
+  while mais < 0:
+    mais = int(input('Digite uma quantidade maior ou igual a 0: '))
+
+print(f'Programa encerrado. Foram mostrados {total} termos.')

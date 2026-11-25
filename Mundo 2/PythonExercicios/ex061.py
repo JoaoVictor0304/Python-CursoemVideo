@@ -2,16 +2,12 @@
 p = int(input('Digite o primeiro termo: '))
 r = int(input('Digite a razão: '))
 
-i = 0
-valor = 0
+contador = 0
+termo = p
 
-while i < 10:
+print('Os 10 primeiros termos da PA são:')
 
-  if i == 0:
-    print(p)
-    i += 1
-    valor = p
-  else:
-    valor += r
-    i += 1
-    print(valor)
+while contador < 10:
+  print(termo, end=' -> ' if contador < 9 else '\n')
+  termo += r
+  contador += 1

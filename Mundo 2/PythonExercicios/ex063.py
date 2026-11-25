@@ -1,28 +1,21 @@
 
-n = int(input('Digite um número: '))
+n = int(input('Quantos termos de Fibonacci você quer mostrar? '))
 
-i = 0
-penultimo = 1
-ultimo = 2
-soma = 3
+while n < 0:
+  n = int(input('Digite uma quantidade maior ou igual a 0: '))
 
-while i < n:
+contador = 0
+atual = 0
+proximo = 1
 
-  if i == 0:
-    print(0)
-    i += 1
-  elif i == 1:
-    print(1)
-    i += 1
-  elif i == 2:
-    print (1)
-    i += 1
-  elif i == 3:
-    print(2)
-    i += 1
-  else:
-    print(soma)
-    penultimo = ultimo
-    ultimo = soma
-    soma = penultimo + ultimo
-    i += 1
+if n == 0:
+  print('Nenhum termo foi solicitado.')
+else:
+  print(f'Os {n} primeiros termos de Fibonacci são:')
+
+  while contador < n:
+    print(atual, end=' -> ' if contador < n - 1 else '\n')
+    soma = atual + proximo
+    atual = proximo
+    proximo = soma
+    contador += 1
